@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!--<parent>-->
+        <!--<groupId>com.hp.oo</groupId>-->
+        <!--<artifactId>parent</artifactId>-->
+        <!--<version>10.80.02</version>-->
+    <!--</parent>-->
+    <groupId>com.hp.oo.dotnet</groupId>
+    <artifactId>dotnet</artifactId>
+    <version>10.71.1</version>
+    <packaging>pom</packaging>
+
+    <scm>
+        <connection>scm:git:git@github.houston.softwaregrp.net:oo-rnd/dotnet.git</connection>
+        <developerConnection>scm:git:git@github.houston.softwaregrp.net:oo-rnd/dotnet.git</developerConnection>
+        <url>https://github.houston.softwaregrp.net/oo-rnd/dotnet</url>
+        <tag>master</tag>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>nexus-repository</id>
+            <name>nexus repository</name>
+            <url>http://mydphdb0166.hpeswlab.net:8081/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshot-repository</id>
+            <name>nexus snapshots repository</name>
+            <url>http://mydphdb0166.hpeswlab.net:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>external_dummy</artifactId>
+                <version>${project.version}</version>
+                <type>dll</type>
+            </dependency>
+
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>oo-dotnet-adapter</artifactId>
+                <version>${project.version}</version>
+                <type>dll</type>
+            </dependency>
+
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>oo-dotnet-adapter-proxy</artifactId>
+                <version>${project.version}</version>
+                <type>dll</type>
+            </dependency>
+
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>oo-dotnet-legacy-plugin</artifactId>
+                <version>${project.version}</version>
+                <type>dll</type>
+            </dependency>
+
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>oo-dotnet-legacy-plugin</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+            </dependency>
+
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>oo-dotnet-legacy-test-plugin</artifactId>
+                <version>${project.version}</version>
+                <type>dll</type>
+            </dependency>
+
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>oo-dotnet-plugin-api</artifactId>
+                <version>${project.version}</version>
+                <type>dll</type>
+            </dependency>
+
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>dotnet</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <sourceDirectory>src/main/csharp</sourceDirectory>
+        <testSourceDirectory>src/test/csharp</testSourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.npanday.plugins</groupId>
+                <artifactId>maven-compile-plugin</artifactId>
+                <version>1.4.0-incubating</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <frameworkVersion>4.0</frameworkVersion>
+                </configuration>
+            </plugin>
+			
+			<!--<plugin>-->
+					<!--<groupId>org.apache.maven.plugins</groupId>-->
+					<!--<artifactId>maven-release-plugin</artifactId>-->
+					<!--<version>2.5.2</version>		-->
+			<!--</plugin>-->
+
+        </plugins>
+    </build>
+
+    <modules>
+        <module>oo-dotnet-plugin-api</module>
+        <module>oo-dotnet-adapter</module>
+        <module>oo-dotnet-adapter-proxy</module>
+        <module>oo-dotnet-legacy-plugin</module>
+        <module>oo-dotnet-legacy-test-plugin</module>
+        <module>external_dummy</module>
+    </modules>
+
+</project>

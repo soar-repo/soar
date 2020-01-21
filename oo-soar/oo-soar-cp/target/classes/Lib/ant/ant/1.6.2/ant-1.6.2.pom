@@ -1,0 +1,21 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ant</groupId>
+  <artifactId>ant</artifactId>
+  <version>1.6.2</version>
+  <dependencies>
+   <!-- https://mvnrepository.com/artifact/org.bluestemsoftware.open.maven.tparty/xerces-impl -->
+	<dependency>
+	    <groupId>org.bluestemsoftware.open.maven.tparty</groupId>
+	    <artifactId>xerces-impl</artifactId>
+	    <version>2.9.0</version>
+	</dependency>
+   <!-- https://mvnrepository.com/artifact/xml-apis/xml-apis -->
+	<dependency>
+	    <groupId>xml-apis</groupId>
+	    <artifactId>xml-apis</artifactId>
+	    <version>1.4.01</version>
+	</dependency>
+
+  </dependencies>
+</project>

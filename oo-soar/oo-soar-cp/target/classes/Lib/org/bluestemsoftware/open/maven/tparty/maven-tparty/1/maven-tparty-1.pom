@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+  <parent>
+    <groupId>org.bluestemsoftware.open.maven</groupId>
+    <artifactId>maven-trunk</artifactId>
+    <version>1</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.bluestemsoftware.open.maven.tparty</groupId>
+  <artifactId>maven-tparty</artifactId>
+  <packaging>pom</packaging>
+  <version>1</version>
+  <name>maven-tparty</name>
+  <url>http://alakai.org</url>
+  <description>Contains third party jars that have either not been released to maven central or the release has pom related errors that have been corrected.</description>
+  <licenses>
+	  <license>
+		  <name>GNU General Public License</name>
+		  <url>http://www.gnu.org/licenses/gpl.txt</url>
+		  <distribution>repo</distribution>
+	  </license>
+  </licenses>
+  <modules>
+    <module>xerces-impl</module>
+    <module>tranql-connector-derby-common</module>
+    <module>jsp-api-2.1</module>
+    <module>jettison</module>
+  </modules>
+</project>

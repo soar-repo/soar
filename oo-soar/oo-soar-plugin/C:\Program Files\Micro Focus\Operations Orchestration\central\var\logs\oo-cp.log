@@ -1,0 +1,50 @@
+[2020-01-20 13:13:12] [INFO   ] Methods execution start 
+[2020-01-20 13:13:12] [INFO   ] Requesting to find URL 
+[2020-01-20 13:13:12] [INFO   ] Get All the URL From The Internet Strats!!... 
+[2020-01-20 13:13:12] [INFO   ] All URLS Fetched!!... 
+[2020-01-20 13:13:12] [INFO   ] Searching for 1.19.0.0... 
+[2020-01-20 13:13:13] [INFO   ] 1.19.0.0 is not listed on AlienVault 
+[2020-01-20 13:13:13] [INFO   ] Searching for 1.19.0.0... 
+[2020-01-20 13:13:13] [INFO   ] 1.19.0.0 is not listed on BlocklistDE 
+[2020-01-20 13:13:13] [INFO   ] Searching for 1.19.0.0... 
+[2020-01-20 13:14:29] [INFO   ] 1.19.0.0 is not listed on Dragon Research Group - VNC 
+[2020-01-20 13:14:29] [INFO   ] Searching for 1.19.0.0... 
+[2020-01-20 13:14:33] [INFO   ] 1.19.0.0 is not listed on NoThink Malware 
+[2020-01-20 13:14:33] [INFO   ] Searching for 1.19.0.0... 
+[2020-01-20 13:14:34] [WARNING] javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target 
+[2020-01-20 13:14:34] [INFO   ] Searching for 1.19.0.0... 
+[2020-01-20 13:14:36] [INFO   ] 1.19.0.0 is not listed on MalWareBytes 
+[2020-01-20 13:14:36] [INFO   ] Searching for 1.19.0.0... 
+[2020-01-20 13:14:37] [INFO   ] 1.19.0.0 is listed on Spamhaus DROP 
+[2020-01-20 13:14:37] [INFO   ] Searching for 1.19.0.0... 
+[2020-01-20 13:14:37] [INFO   ] 1.19.0.0 is not listed on Spamhaus EDROP 
+[2020-01-20 13:14:37] [INFO   ] BadIpCounter : 1 
+[2020-01-20 13:14:37] [INFO   ] Bad IP listed in 1websites 
+[2020-01-20 13:14:37] [INFO   ] Bad Ip Count greter then 5 
+[2020-01-20 13:14:37] [INFO   ] Start!..Sending Ticket to the ArchSite.. 
+[2020-01-20 13:14:37] [INFO   ] Genrating Token.... 
+[2020-01-20 13:14:38] [INFO   ] Token Genrated!!..<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns3:loginResponse xmlns:ns2="http://ws.v1.service.core.product.arcsight.com/groupService/" xmlns:ns3="http://ws.v1.service.core.product.arcsight.com/loginService/" xmlns:ns4="http://ws.v1.service.core.product.arcsight.com/userService/"><ns3:return>DbAi0PUADfVNIrNQSyRKIZ5YyJE-SoLQ7VmZnjbX0xs.</ns3:return></ns3:loginResponse> 
+[2020-01-20 13:14:38] [INFO   ] token: DbAi0PUADfVNIrNQSyRKIZ5YyJE-SoLQ7VmZnjbX0xs. 
+[2020-01-20 13:14:38] [INFO   ] Success!..Ticket was Created on the Archsite.. 
+[2020-01-20 13:14:38] [INFO   ] Start Device ID PFSense 
+[2020-01-20 13:14:38] [INFO   ] Init TO Logged in Firewall 
+[2020-01-20 13:14:38] [INFO   ] Trying to logged in  
+[2020-01-20 13:14:38] [INFO   ] Success to logged in  
+[2020-01-20 13:14:38] [INFO   ] Connected... /home/sattrix
+ 
+[2020-01-20 13:14:38] [INFO   ] /home/sattrix
+ 
+[2020-01-20 13:14:38] [INFO   ] Attemting finnaly block 
+[2020-01-20 13:14:38] [INFO   ] End Device ID PFSense 
+[2020-01-20 13:14:38] [INFO   ] Start!..Updating Ticket to the ArchSite.. 
+[2020-01-20 13:14:38] [INFO   ] Genrating Token.... 
+[2020-01-20 13:14:38] [INFO   ] Token Genrated!!..<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns3:loginResponse xmlns:ns2="http://ws.v1.service.core.product.arcsight.com/groupService/" xmlns:ns3="http://ws.v1.service.core.product.arcsight.com/loginService/" xmlns:ns4="http://ws.v1.service.core.product.arcsight.com/userService/"><ns3:return>6XlCOUrs-trICdw3jTe6wveK7qqgioViMIefidYCQLc.</ns3:return></ns3:loginResponse> 
+[2020-01-20 13:14:38] [INFO   ] Request Body For Update :{"cas.update":{"cas.resource":{"name":"PFSense-945103121770","resourceid":"7IPjmwW8BABDKK7wQW65XFw==","stage":"CLOSED"},"cas.authToken":"6XlCOUrs-trICdw3jTe6wveK7qqgioViMIefidYCQLc."}} 
+[2020-01-20 13:14:38] [INFO   ] Result For TIcket Updation  Failed to update resource id=7IPjmwW8BABDKK7wQW65XFw== 
+[2020-01-20 13:14:38] [INFO   ] Success!..Updated Ticket on the ArchSite.. 
+[2020-01-20 13:14:38] [INFO   ] Update Result : true 
+[2020-01-20 14:33:16] [INFO   ] Methods execution start 
+[2020-01-20 14:33:16] [INFO   ] Requesting to find URL 
+[2020-01-20 14:33:16] [INFO   ] Get All the URL From The Internet Strats!!... 
+[2020-01-20 14:33:16] [INFO   ] All URLS Fetched!!... 
+[2020-01-20 14:33:16] [INFO   ] Searching for 1.19.0.0... 
