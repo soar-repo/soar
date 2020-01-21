@@ -6,7 +6,6 @@ com/soar/arcsight/TicketManagement.class
 com/soar/commons/Constant.class
 com/soar/actions/SoarActions.class
 com/soar/utils/Log.class
-SampleActions.class
 GeneratedPluginMetadataPlugin.class
 com/soar/ips/IPHandler.class
 com/soar/utils/Log$2.class

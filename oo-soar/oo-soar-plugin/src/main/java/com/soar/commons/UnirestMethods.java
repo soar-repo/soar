@@ -85,7 +85,7 @@ public class UnirestMethods {
 		Unirest.setHttpClient((HttpClient) httpclient);
 
 		HttpResponse<String> response = Unirest.post(
-				"https://stxmss-esm01.sattrix.corp:8443/www/manager-service/rest/CaseService/getSystemCasesGroupID")
+				"https://"+ hostName +":"+ port +"/www/manager-service/rest/CaseService/getSystemCasesGroupID")
 				.header("Content-Type", "application/json").header("alt", "json")
 				.body("{\n  \"cas.getSystemCasesGroupID\": {\n    \"cas.authToken\":\"" + token + "\"\n    \n  }\n}")
 				.asString();
