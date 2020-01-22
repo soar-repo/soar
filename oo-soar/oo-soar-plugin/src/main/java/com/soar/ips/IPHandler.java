@@ -14,8 +14,6 @@ import com.soar.commons.Constant;
 
 public class IPHandler {
 	private static Logger logger = Logger.getGlobal();
-	private static Logger methoodLog = Logger.getLogger("Methods");
-
 	/*
 	 * @version: 1.0.0
 	 * 
@@ -24,8 +22,6 @@ public class IPHandler {
 	 */
 
 	public int checkIpReputation(String badIp, String proxyIp, int proxyPort) throws SecurityException, IOException {
-
-		methoodLog.info("IP Reputation checking start...");
 
 		Map<Integer, String[]> urls = null;
 		int ipCounter = 0;
@@ -45,7 +41,6 @@ public class IPHandler {
 				continue;
 			}
 		}
-		methoodLog.info("IP Reputation Ended.");
 		System.out.println("Request procced....");
 		return ipCounter;
 	}

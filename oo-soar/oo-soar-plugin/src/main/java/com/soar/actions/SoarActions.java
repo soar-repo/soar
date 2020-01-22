@@ -42,7 +42,7 @@ public class SoarActions {
 		methoodLog.addHandler(Log.setupLoggerForStatus());
 		logger.addHandler(Log.setupLoggerForDeveloper());
 
-		if (badIp.isEmpty() || proxyIP.isEmpty() || proxyIP.isEmpty()) {
+		if (badIp.isEmpty() || proxyIP.isEmpty() || proxyPort.isEmpty()) {
 			logger.info("checkIpReputation method's perameter are null.. ");
 			resultMap.put("result_message", "Fileds values are required!!");
 			resultMap.put(OutputNames.RETURN_RESULT, ReturnCodes.RETURN_CODE_FAILURE);
@@ -235,7 +235,6 @@ public class SoarActions {
 			methoodLog.info("Updating Logs to ArcSight...");
 			TicketManagement tickets = new TicketManagement();
 			try {
-
 				boolean result = tickets.updateResource(arcsightHostIP, arcSightPort, ticketName, resourceId,
 						arcsightUsername, arcsightPassword);
 				logger.info("Update Result : " + result);
@@ -253,9 +252,11 @@ public class SoarActions {
 				resultMap.put(OutputNames.RETURN_RESULT, ReturnCodes.RETURN_CODE_FAILURE);
 				methoodLog.info("Updated logs to ArcSight..:= False " + e.getMessage());
 				logger.info("Opps !! .. Exception " + ExceptionUtils.getFullStackTrace(e));
+			}finally {
+				Log.fileCloseDeveloper();
+				Log.fileCloseClient();
 			}
 		}
 		return resultMap;
 	}
-
 }

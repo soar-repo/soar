@@ -20,7 +20,7 @@ public class Log {
 		
 		  File file=createDirectoryForLogs(logDir);
 		try {
-			logForDeveloper = new FileHandler(file.getAbsolutePath() + "/oo-cp.log", true);
+			logForDeveloper = new FileHandler(file.getAbsolutePath() + "\\oo-cp.log", true);
 			logForDeveloper.setLevel(Level.FINE);
 			logForDeveloper.setFormatter(new SimpleFormatter() {
 				private static final String format = "[%1$tF %1$tT] [%2$-7s] %3$s %n";
@@ -41,7 +41,7 @@ public class Log {
 	public static  FileHandler setupLoggerForStatus() {
 		 File file=createDirectoryForLogs(logDir+"\\soar-logs");
 		try {
-			logForClient = new FileHandler(file + "\\status.log", true);
+			logForClient = new FileHandler(file + "\\status.log", false);
 			logForClient.setLevel(Level.FINE);
 			logForClient.setFormatter(new SimpleFormatter() {
 				private static final String format = "[%1$tF %1$tT] [%2$-7s] %3$s %n";
@@ -63,6 +63,16 @@ public class Log {
 	    File dir = new File(directory);
 	    if (!dir.exists()) dir.mkdirs();
 	    return new File(directory);
+	}
+	
+	public static void fileCloseDeveloper() {
+		logForDeveloper.close();
+		logForDeveloper.flush();
+	}
+	
+	public static void fileCloseClient() {
+		logForClient.close();
+		logForClient.flush();
 	}
 
 }
