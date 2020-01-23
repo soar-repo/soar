@@ -82,7 +82,7 @@ public class IPHandler {
 			org.jsoup.Connection.Response reponse = null;
 			reponse = Jsoup.connect(url).header("User-Agent", Constant.getUserAgent()).ignoreContentType(true)
 					.ignoreHttpErrors(true)
-					//.proxy(new Proxy(Proxy.Type.HTTP, InetSocketAddress.createUnresolved(proxyIp, proxyPort)))
+					.proxy(new Proxy(Proxy.Type.HTTP, InetSocketAddress.createUnresolved(proxyIp, proxyPort)))
 					.timeout(0).execute();
 			if (Pattern.compile(badIp).matcher(reponse.body().toString()).find()) {
 				logger.log(Level.INFO, badIp + " is listed on " + name);

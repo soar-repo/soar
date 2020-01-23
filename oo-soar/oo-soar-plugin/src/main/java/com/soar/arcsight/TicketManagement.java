@@ -27,7 +27,7 @@ public class TicketManagement {
 		String body = "{\n" + "    \"cas.insertResource\": {\n" + "        \"cas.authToken\": \"" + token + "\",\n"
 				+ "        \"cas.resource\": {\n" + "            \"name\": \""
 				+ new StringBuilder(device).append(new SimpleDateFormat().getCalendar().getTimeInMillis()) + "\",\n"
-				+ "            \"stage\":\"INITIAL\",\n" + "            \"eventId\":\"" + eventId + "\"\n"
+				+ "            \"stage\":\"INITIAL\",\n" + "            \"eventIDs\":\"" + eventId + "\"\n"
 				+ "        },\n" + "        \"cas.parentId\":\"01000100017777777\"\n" + "    }\n" + "}";
 
 		String result = UnirestMethods.POST(URLS.managerServiceURL(hostName, Integer.parseInt(port), "insertResource"),

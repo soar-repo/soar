@@ -22,6 +22,7 @@ import com.hp.oo.sdk.content.plugin.ActionMetadata.MatchType;
 import com.hp.oo.sdk.content.plugin.ActionMetadata.ResponseType;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import com.soar.arcsight.TicketManagement;
+import com.soar.commons.Validation;
 import com.soar.firewalls.FirewallCommon;
 import com.soar.ips.IPHandler;
 import com.soar.utils.Log;
@@ -42,7 +43,8 @@ public class SoarActions {
 		methoodLog.addHandler(Log.setupLoggerForStatus());
 		logger.addHandler(Log.setupLoggerForDeveloper());
 
-		if (badIp.isEmpty() || proxyIP.isEmpty() || proxyPort.isEmpty()) {
+		if (badIp.isEmpty() && proxyIP.isEmpty() && proxyPort.isEmpty() && !Validation.isValidIP(badIp)
+				&& !Validation.isValidPORT(proxyPort) && !Validation.isValidIP(proxyIP)) {
 			logger.info("checkIpReputation method's perameter are null.. ");
 			resultMap.put("result_message", "Fileds values are required!!");
 			resultMap.put(OutputNames.RETURN_RESULT, ReturnCodes.RETURN_CODE_FAILURE);
@@ -252,11 +254,51 @@ public class SoarActions {
 				resultMap.put(OutputNames.RETURN_RESULT, ReturnCodes.RETURN_CODE_FAILURE);
 				methoodLog.info("Updated logs to ArcSight..:= False " + e.getMessage());
 				logger.info("Opps !! .. Exception " + ExceptionUtils.getFullStackTrace(e));
-			}finally {
+			} finally {
 				Log.fileCloseDeveloper();
 				Log.fileCloseClient();
 			}
 		}
 		return resultMap;
 	}
+
+	public static void main(String[] args) throws KeyManagementException, NoSuchAlgorithmException, KeyStoreException,
+			UnirestException, SecurityException, IOException {
+		SoarActions soar = new SoarActions();
+		String badIp = "1.190.0.0";
+		String proxyIp = "192.168.6.11";
+		String proxyPort = "8080";
+		String name = "PFSense";
+		String ipcount = "2";
+		String arcHost = "stxmss-esm01.sattrix.corp";
+		String arcPort = "8443";
+		String deviceName = "PFSense";
+		String eventIds = "00201";
+		String username = "socl1";
+		String password = "arcESML1@123";
+		if (!arcHost.isEmpty() && Validation.isValidPORT(arcPort) && Validation.isValidPARAMS(deviceName)
+				&& Validation.isValidNUMBER(eventIds) && Validation.isValidUSERNAME(username)
+				&& !password.isEmpty()) {
+			Map<String, String> ticketCreationOnArcSight = soar.ticketCreationOnArcSight(arcHost, arcPort, deviceName,
+					eventIds, username, password);
+			System.out.println(ticketCreationOnArcSight.toString());
+
+		} else {
+			System.out.println("Validation failed");
+		}
+		/*
+		 * 					
+		 * 
+		 * Map<String, String> blockIpOnFirewall = soar.blockIpOnFirewall("1.19.0.0",
+		 * "192.168.14.10", "PFSense", "sattrix", "Sattrix#321", "pwd");
+		 * System.out.println(blockIpOnFirewall.toString());
+		 * 
+		 * Map<String, String> updateTicketOnArcSight =
+		 * soar.updateTicketOnArcSight("stxmss-esm01.sattrix.corp", "8443",
+		 * ticketCreationOnArcSight.get("ticket_name"),
+		 * ticketCreationOnArcSight.get("resource_id"), "socl1", "arcESML1@123");
+		 * System.out.println(updateTicketOnArcSight.toString());
+		 */
+	}
+
 }
